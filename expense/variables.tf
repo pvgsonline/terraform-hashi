@@ -3,7 +3,7 @@ variable "instance_name" {
   default     = ["mysql","backend","frontend"]
 }
 
-variable "tags" {
+variable "common_tags" {
   type        = map
   default     = {
     environment = "dev"
