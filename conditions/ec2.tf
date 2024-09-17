@@ -3,7 +3,7 @@ resource "aws_instance" "terraform"{
     vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
     instance_type = var.environment == "prod" ? "t3.small" : "t3.micro"
 
-    tags {
+    tags = {
         Name = "Terraform"
     }
 }
@@ -26,7 +26,7 @@ resource "aws_security_group" "allow_ssh_terraform"{
         cidr_blocks      = ["0.0.0.0/0"]
         ipv6_cidr_blocks = ["::/0"]
   }
-    tags {
+    tags = {
         Name = "Terraform"
     }
 
