@@ -1,5 +1,5 @@
 output "public_ip" {
-  value       = aws_instance.terraform.public_ip.[count.index]
+  value = [for instance in aws_instance.terraform : instance.public_ip]
   sensitive   = false
   description = "provides the public ip address"
 }
