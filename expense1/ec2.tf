@@ -30,7 +30,7 @@ resource "aws_security_group" "allow_terraform_ssh"{
   }
 
     tags = merge(
-        var.common_tags {
+        var.common_tags ,{
             Name = "allow_sshh"
         }
     )
