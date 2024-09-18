@@ -6,7 +6,7 @@ resource "aws_instance" "terraform"{
 
     tags = merge (
         var.common_tags ,{
-            Name = var.instance_name
+            Name = var.instance_name[count.index]
         }
     )
 }
