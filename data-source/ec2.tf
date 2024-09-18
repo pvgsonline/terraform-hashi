@@ -5,7 +5,7 @@ resource "aws_instance" "terraform"{
     instance_type = "t3.micro"
 
     tag = merge (
-        common_tags, {
+        var.common_tags, {
         Name = var.instance_name[count.index]
     }
     )   
@@ -32,7 +32,7 @@ resource "aws_security_group" "allow_ssh_terraform"{
   }
 
   tags = merge (
-    common_tags,{
+    var.common_tags,{
         Name  = "allow_sshh"
     }
   )
