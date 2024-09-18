@@ -8,7 +8,7 @@ resource "aws_instance" "terraform"{
         common_tags, {
         Name = var.instance_name[count.index]
     }
-)
+    )   
 
 }
 
