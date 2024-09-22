@@ -10,4 +10,4 @@ variable common_map {
     Environment = "dev"
     Terraform = true
 }
-
+}
