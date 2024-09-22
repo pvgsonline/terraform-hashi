@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket = "pvgs-remote-state"
-    key = "remote-state-demo"
+    key = "dynamic-state-demo"
     region = "us-east-1"
     dynamodb_table = "pvgs-locking"
   }

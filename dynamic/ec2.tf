@@ -22,11 +22,11 @@ resource "aws_security_group" "allow_ssh_terraform" {
 
   dynamic "ingress" {
     for_each = var.ingress_rules
-    content{
+    content {
     from_port        = each.value["from_port"]
     to_port          = each.value["to_port"]
     protocol         = each.value["protocol"]
-    cidr_blocks      = each.value["cidr_blocks"]
+    cidr_blocks      = each.value.cidr_blocks
   }
   }
 
