@@ -22,14 +22,14 @@ resource "aws_instance" "terraform"{
       inline = [
         "sudo dnf install ansible -y",
         "sudo dnf install nginx -y",
-        "sudo systemctl start nginx -y"
+        "sudo systemctl start nginx"
       ]
     }
 
     provisioner "remote-exec" {
       when = destroy
       inline = [
-        "sudo systemctl stop nginx -y"
+        "sudo systemctl stop nginx"
       ]
     }
 }
@@ -48,8 +48,8 @@ resource "aws_security_group" "allow_ssh_terraform" {
   }
 
   ingress {
-    from_port        = 22
-    to_port          = 22
+    from_port        = 80
+    to_port          = 80
     protocol         = "TCP"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
