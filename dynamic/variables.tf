@@ -6,14 +6,14 @@ variable ingress_rules {
     protocol         = "TCP"
     cidr_blocks      = ["0.0.0.0/0"]
     description      = "opening 22"
-    }
+    },
     {
     from_port        = 80
     to_port          = 80
     protocol         = "TCP"
     cidr_blocks      = ["0.0.0.0/0"]
     description      = "opening 22"
-    }
+    },
     {
     from_port        = 8080
     to_port          = 8080
