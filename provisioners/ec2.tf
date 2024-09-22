@@ -20,8 +20,8 @@ resource "aws_instance" "terraform"{
 
     provisioner "remote-exec" {
       inline = [
-        "sudo dnf install ansible -y"
-        "sudo dnf install nginx -y"
+        "sudo dnf install ansible -y",
+        "sudo dnf install nginx -y",
         "sudo systemctl start nginx -y"
       ]
     }
