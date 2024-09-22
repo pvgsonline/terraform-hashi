@@ -1,5 +1,5 @@
 resource "aws_route53_record" "terraform"{
-    count = length(var.instance_name[count.index])
+    count = length(var.instance_name)
     zone_id = local.zone_id
     name = var.instance_name[count.index] == "frontend" ? local.domain_name : "${var.instance_name[count.index]}.${local.domain_name}"
     type    = "A"
