@@ -26,7 +26,7 @@ resource "aws_instance" "terraform"{
       ]
     }
 
-    provisioner "remote-exce" {
+    provisioner "remote-exec" {
       when = destroy
       inline = [
         "sudo systemctl stop nginx -y"
