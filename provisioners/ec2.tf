@@ -19,7 +19,7 @@ resource "aws_instance" "terraform"{
     }
 
     provisioner "remote-exec" {
-      inline [
+      inline = [
         "sudo dnf install ansible -y"
         "sudo dnf install nginx -y"
         "sudo systemctl start nginx -y"
@@ -28,7 +28,7 @@ resource "aws_instance" "terraform"{
 
     provisioner "remote-exce" {
       when = destroy
-      inline [
+      inline = [
         "sudo systemctl stop nginx -y"
       ]
     }
